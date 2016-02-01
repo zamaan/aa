@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+{% load staticfiles %}
+
+{% block title %} About- {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<h1> This website allows you to rent the items or post the items which you want to rent out!</h1>
+<p>You can select your city to know the items available to rent near you!
+<ul>
+	{% for social_account in social_accounts %}
+		<li>
+			<a href="http://{{social_account.network}}.com/{{social_account.username}}">{{ social_account.network|title }}
+			</a>
+		</li>
+		{% endfor %}
+</ul>
+</p>
+
+{% endblock %}
